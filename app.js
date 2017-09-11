@@ -15,6 +15,12 @@ function getAndPrintHTMLChunks () {
       console.log(data + '\n');
     });
 
+    response.on('error', function(err) {
+      if (err) {
+        throw err;
+      }
+    });
+
     response.on('end', function() {
       console.log("---COMPLETE---")
     });
